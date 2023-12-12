@@ -74,17 +74,17 @@ if __name__ == "__main__":
     meeting_link = "https://us06web.zoom.us/j/84222261147"
 
     main(
-        title="Reqeust Network XXXX",
-        presenter="David Hunt-Mateo",
-        twitter="@RequestNetwork",
+        title="Ethereum sharing meeting",
+        presenter="vitalik",
+        twitter="@VitalikButerin",
         language="English",
-        project="Reqeust Network",
+        project="Ethereum",
         project_logo="./img/ethereum_foundation_logo.svg",
         time_str="2023.12.14 22:00 (UTC+8)",
         meeting_number="842-222-61147",
         meeting_link=meeting_link,
         meeting_type="zoom",
         doc_link="https://github.com/sec-bit/learning-zkp/blob/develop/plonk-intro-cn/7-plonk-lookup.md",
-        title_zh="查找表技术",
+        title_zh="以太坊技术分享",
         chat_time_str="8pm, Dec 9th",
     )

@@ -143,20 +143,3 @@ def generate_sharing_post(
     # 保存或显示最终海报
     poster.save("./output/sharing_post.png")  # 保存海报
     # poster.show()
-
-
-if __name__ == "__main__":
-    meeting_link = "https://us06web.zoom.us/j/84222261147"
-
-    generate_sharing_post(
-        title="Reqeust Network XXXX",
-        presenter="David Hunt-Mateo",
-        twitter="",
-        language="English",
-        project="Reqeust Network",
-        project_logo="./ethereum_foundation_logo.svg",
-        time_str="2023.12.14 22:00 (UTC+8)",
-        meeting_number="842-222-61147",
-        meeting_link=meeting_link,
-        meeting_type="zoom",
-    )
