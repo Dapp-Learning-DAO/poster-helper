@@ -1,0 +1,39 @@
+# python
+__pycache__/
+*.py[cod]
+
+# vim
+*.swp
+*.swo
+
+# Mac
+.DS_Store
+
+# virtualenv
+/env
+
+# env vars file
+/.env
+
+# hypothesis
+/.hypothesis
+
+# Sphinx
+/docs/_build
+
+# Jupyter
+.ipynb_checkpoints
+
+# coverage
+.coverage
+.coverage.*
+
+# generated CI test data
+test/data/*-simple_results_*.pickle
+
+/.pdbrc
+
+# output
+output/
+tmp/
+
