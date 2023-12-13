@@ -20,13 +20,9 @@ def convert_svg_to_png(file_path, bg_color=BG_COLOR):
             write_to=TMP_CONVERT_PNG,
             background_color=bg_color,
         )
-        image = Image.open(TMP_CONVERT_PNG)
-        if image.width > 500:
-            image = image.resize((500, int(image.height * 500 / image.width)))
-        elif image.height > 400:
-            image = image.resize((int(image.width * 400 / image.height), 400))
+        image = Image.open(TMP_CONVERT_PNG).convert("RGBA")
     else:
-        image = Image.open(file_path)
+        image = Image.open(file_path).convert("RGBA")
     return image
 
 

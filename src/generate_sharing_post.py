@@ -14,6 +14,8 @@ INFO_FONT = "./font/Montserrat-VariableFont_wght.ttf"
 
 BG_COLOR = "#101E3F"
 
+RIGHT_TOP_LOGO_SIZE = (450, 400)
+
 
 def generate_sharing_post(
     title: str,
@@ -21,6 +23,7 @@ def generate_sharing_post(
     meeting_number: str,
     time_str: str,
     meeting_link: str,
+    title_size: int = 140,
     language: str = "Chinese",
     twitter: str = "",
     project: str = "",
@@ -28,16 +31,16 @@ def generate_sharing_post(
     meeting_type: str = "tencent",  # "tencent" | "zoom"
 ):
     # 加载海报图片
-    poster = Image.open(BG_DIR)
+    poster = Image.open(BG_DIR).convert("RGBA")
     draw = ImageDraw.Draw(poster)
 
     padding = 120
     content_width = poster.width - padding * 2
 
     # title
-    title_font = ImageFont.truetype(TITLE_FONT, size=140)
+    title_font = ImageFont.truetype(TITLE_FONT, size=title_size)
     title_position_x = padding
-    title_position_y = 480
+    title_position_y = 540
     text_color = "#A6FBF6"  # 或者使用RGB颜色，如(255, 255, 255)
 
     title_lines = auto_title_lines(title, title_font, content_width)
@@ -53,7 +56,7 @@ def generate_sharing_post(
 
     # info
     info_position_x = padding
-    info_position_y = 1015
+    info_position_y = 1140
 
     info_lines = [f"Presented by: {presenter}"]
     if twitter != "":
@@ -81,11 +84,11 @@ def generate_sharing_post(
             align="center",
             stroke_width=1,
         )
-        info_top -= _h + 16
+        info_top -= _h + 22
 
     # meeting info
     meeting_position_x = padding
-    meeting_position_y = 1220
+    meeting_position_y = 1320
 
     meeting_lines = [
         f"TIME: {time_str}",
@@ -106,21 +109,31 @@ def generate_sharing_post(
             align="center",
             stroke_width=1,
         )
-        meeting_top += _h + 20
+        meeting_top += _h + 24
 
     # right-top logo
     if project_logo != "":
         top_right_logo = convert_svg_to_png(project_logo)
+        (max_w, max_h) = RIGHT_TOP_LOGO_SIZE
+        if top_right_logo.width > max_w:
+            top_right_logo = top_right_logo.resize(
+                (max_w, int(top_right_logo.height * max_w / top_right_logo.width))
+            )
+        elif top_right_logo.height > max_h:
+            top_right_logo = top_right_logo.resize(
+                (int(top_right_logo.width * max_h / top_right_logo.height), max_h)
+            )
         poster.paste(
             top_right_logo,
             (
                 poster.width - 320 - (padding + top_right_logo.width // 2),
                 padding + 100 - (top_right_logo.height // 2),
             ),
+            top_right_logo,  # alpha mask
         )
     else:
-        top_right_logo = Image.open(DEFAULT_LOGO_DIR)
-        poster.paste(top_right_logo, (poster.width - 640, 140))
+        top_right_logo = Image.open(DEFAULT_LOGO_DIR).convert("RGBA")
+        poster.paste(top_right_logo, (poster.width - 640, 140), top_right_logo)
 
     # 生成二维码
     qr = qrcode.QRCode(
