@@ -77,12 +77,12 @@ def generate_sharing_cover(
         date_top += _h + 20
 
     # presenter info
-    presenter_font = ImageFont.truetype(TITLE_FONT, size=50)
+    presenter_font = ImageFont.truetype(TITLE_FONT, size=45)
 
     (left, top, right, bottom) = presenter_font.getbbox(presenter)
     _w = right - left
     draw.text(
-        (padding + (content_width - _w) // 2 + 128, 754),
+        (padding + (content_width - _w) // 2 + 128, 758),
         presenter,
         font=presenter_font,
         fill="#ffffff",
