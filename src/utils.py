@@ -5,7 +5,6 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 TMP_CONVERT_PNG = "./tmp/tmp_convert.png"
-BG_COLOR = "#101E3F"
 
 
 def is_svg_file(file_path):
@@ -13,12 +12,11 @@ def is_svg_file(file_path):
     return file_extension.lower() == ".svg"
 
 
-def convert_svg_to_png(file_path, bg_color=BG_COLOR):
+def convert_svg_to_png(file_path):
     if is_svg_file(file_path):
         cairosvg.svg2png(
             url=file_path,
             write_to=TMP_CONVERT_PNG,
-            background_color=bg_color,
         )
         image = Image.open(TMP_CONVERT_PNG).convert("RGBA")
     else:

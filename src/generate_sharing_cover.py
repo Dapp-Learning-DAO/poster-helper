@@ -1,7 +1,6 @@
 import os
-from turtle import bgcolor
 import qrcode
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 from .utils import auto_title_lines, convert_svg_to_png
 
 
@@ -12,6 +11,8 @@ DEFAULT_LOGO_DIR = "./img/share_to_earn.png"
 TITLE_FONT = "./font/Kollektif.ttf"
 INFO_FONT = "./font/Montserrat-VariableFont_wght.ttf"
 
+RIGHT_TOP_LOGO_SIZE = (500, 150)
+
 
 def generate_sharing_cover(
     title: str,
@@ -20,6 +21,7 @@ def generate_sharing_cover(
     time_str: str,
     meeting_link: str,
     language: str = "Chinese",
+    presenter_avatar: str = "",
     twitter: str = "",
     project: str = "",
     project_logo: str = "",
@@ -27,9 +29,9 @@ def generate_sharing_cover(
 ):
     # 加载海报图片
     if project_logo != "":
-        poster = Image.open(COVER_BG_DIR_2)
+        poster = Image.open(COVER_BG_DIR_2).convert("RGBA")
     else:
-        poster = Image.open(COVER_BG_DIR)
+        poster = Image.open(COVER_BG_DIR).convert("RGBA")
 
     draw = ImageDraw.Draw(poster)
 
@@ -37,9 +39,9 @@ def generate_sharing_cover(
     content_width = poster.width - padding * 2
 
     # title
-    title_font = ImageFont.truetype(TITLE_FONT, size=120)
+    title_font = ImageFont.truetype(TITLE_FONT, size=96)
     title_position_x = padding
-    title_position_y = 400
+    title_position_y = 380
     text_color = "#FFFFFF"
 
     title_lines = auto_title_lines(title, title_font, content_width)
@@ -66,14 +68,14 @@ def generate_sharing_cover(
         _w = right - left
         _h = bottom - top
         draw.text(
-            (date_position_x + (content_width - _w) // 2 + 2, date_top),
+            (date_position_x + (content_width - _w) // 2 + 50, date_top),
             _info,
             font=date_font,
             fill="#ffffff",
             align="center",
         )
         date_top += _h + 20
-    
+
     # presenter info
     presenter_font = ImageFont.truetype(TITLE_FONT, size=50)
 
@@ -99,18 +101,45 @@ def generate_sharing_cover(
 
     # right-top logo
     if project_logo != "":
-        top_right_logo = convert_svg_to_png(project_logo, bg_color="#300480")
+        top_right_logo = convert_svg_to_png(project_logo)
+        (max_w, max_h) = RIGHT_TOP_LOGO_SIZE
+        if top_right_logo.width > max_w:
+            top_right_logo = top_right_logo.resize(
+                (max_w, int(top_right_logo.height * max_w / top_right_logo.width))
+            )
+        elif top_right_logo.height > max_h:
+            top_right_logo = top_right_logo.resize(
+                (int(top_right_logo.width * max_h / top_right_logo.height), max_h)
+            )
         poster.paste(
             top_right_logo,
             (
-                poster.width - 300 - (padding + top_right_logo.width // 2),
+                poster.width - 350 - (padding + top_right_logo.width // 2),
                 padding + 100 - (top_right_logo.height // 2),
             ),
+            top_right_logo,  # alpha mask
         )
     else:
-        top_right_logo = Image.open(DEFAULT_LOGO_DIR)
-        poster.paste(top_right_logo, (poster.width - 640, 140))
+        top_right_logo = Image.open(DEFAULT_LOGO_DIR).convert("RGBA")
+        poster.paste(
+            top_right_logo, (poster.width - 640, 140), top_right_logo
+        )  # alpha mask
+
+    # Avatar
+    if presenter_avatar != "":
+        avatar_image = Image.open(presenter_avatar).convert("RGBA")
+        avatar_image = avatar_image.resize((168, 168))
+        # create avatar mask
+        mask = Image.new("L", avatar_image.size, 0)
+        draw = ImageDraw.Draw(mask)
+        draw.ellipse((0, 0) + avatar_image.size, fill=255)
+
+        # use mask on avatar
+        rounded_avatar = ImageOps.fit(avatar_image, mask.size, centering=(0.5, 0.5))
+        rounded_avatar.putalpha(mask)
+
+        avatar_position = (594, 734)
+        poster.paste(rounded_avatar, avatar_position, rounded_avatar)
 
     poster.save("./output/sharing_cover.png")
     # poster.show()
-
