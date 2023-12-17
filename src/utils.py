@@ -29,7 +29,10 @@ def auto_title_lines(txt: str, font: float, max_width: float, line_height: int =
     _tmp_line = []
     w = 0
     y = 0
-    arr = txt.split()
+    if "\n" in txt:
+        arr = txt.split("\n")
+    else:
+        arr = txt.split()
     for _string in arr:
         (left, top, right, bottom) = font.getbbox(_string)
         _w = right - left

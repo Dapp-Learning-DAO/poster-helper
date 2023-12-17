@@ -14,7 +14,7 @@ INFO_FONT = "./font/Montserrat-VariableFont_wght.ttf"
 
 BG_COLOR = "#101E3F"
 
-RIGHT_TOP_LOGO_SIZE = (450, 400)
+RIGHT_TOP_LOGO_SIZE = (300, 350)
 
 
 def generate_sharing_post(

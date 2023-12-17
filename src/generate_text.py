@@ -13,6 +13,7 @@ def generate_text(
     title_zh: str = "",
     chat_time_str: str = "",
 ):
+    title = title.replace("\n", " ")
     if title_zh != "":
         title_zh = f"({title_zh})"
 

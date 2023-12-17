@@ -11,7 +11,7 @@ DEFAULT_LOGO_DIR = "./img/share_to_earn.png"
 TITLE_FONT = "./font/Kollektif.ttf"
 INFO_FONT = "./font/Montserrat-VariableFont_wght.ttf"
 
-RIGHT_TOP_LOGO_SIZE = (500, 150)
+RIGHT_TOP_LOGO_SIZE = (500, 200)
 
 
 def generate_sharing_cover(
@@ -59,7 +59,7 @@ def generate_sharing_cover(
     date_position_x = padding
     date_position_y = 650
 
-    date_lines = [f"DATE   {time_str}"]
+    date_lines = [f"TIME   {time_str}"]
 
     date_font = ImageFont.truetype(TITLE_FONT, size=50)
     date_top = date_position_y
@@ -107,7 +107,7 @@ def generate_sharing_cover(
             top_right_logo = top_right_logo.resize(
                 (max_w, int(top_right_logo.height * max_w / top_right_logo.width))
             )
-        elif top_right_logo.height > max_h:
+        if top_right_logo.height > max_h:
             top_right_logo = top_right_logo.resize(
                 (int(top_right_logo.width * max_h / top_right_logo.height), max_h)
             )
@@ -138,7 +138,7 @@ def generate_sharing_cover(
         rounded_avatar = ImageOps.fit(avatar_image, mask.size, centering=(0.5, 0.5))
         rounded_avatar.putalpha(mask)
 
-        avatar_position = (594, 734)
+        avatar_position = (593, 735)
         poster.paste(rounded_avatar, avatar_position, rounded_avatar)
 
     poster.save("./output/sharing_cover.png")

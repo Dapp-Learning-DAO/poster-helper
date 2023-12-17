@@ -5,7 +5,9 @@ from src.generate_text import generate_text
 
 def main(
     title,
+    title_size,
     presenter,
+    presenter_avatar,
     twitter,
     language,
     project,
@@ -20,6 +22,7 @@ def main(
 ):
     generate_sharing_post(
         title=title,
+        title_size=title_size,
         presenter=presenter,
         twitter=twitter,
         language=language,
@@ -34,6 +37,7 @@ def main(
     generate_sharing_cover(
         title=title,
         presenter=presenter,
+        presenter_avatar=presenter_avatar,
         twitter=twitter,
         language=language,
         project=project,
@@ -71,20 +75,22 @@ def main(
 
 
 if __name__ == "__main__":
-    meeting_link = "https://us06web.zoom.us/j/84222261147"
+    meeting_link = "https://meeting.tencent.com/dm/CZSIBEjKMZb0"
 
     main(
-        title="Ethereum sharing meeting",
-        presenter="vitalik",
-        twitter="@VitalikButerin",
-        language="English",
-        project="Ethereum",
-        project_logo="./img/ethereum_foundation_logo.svg",
-        time_str="2023.12.14 22:00 (UTC+8)",
-        meeting_number="842-222-61147",
+        title="AA Workshop(I):\nAA Intro + Account",
+        title_zh="账户抽象 workshop(I)",
+        title_size=120,
+        presenter="imToken Labs",
+        presenter_avatar="./input/Symble_Square.png",
+        twitter="@imTokenOfficial",
+        language="Chinese",
+        project="imToken Labs",
+        project_logo="./input/imtoken.png",
+        time_str="2023.12.19 20:00 (UTC+8)",
+        meeting_number="430-278-937",
         meeting_link=meeting_link,
-        meeting_type="zoom",
-        doc_link="https://github.com/sec-bit/learning-zkp/blob/develop/plonk-intro-cn/7-plonk-lookup.md",
-        title_zh="以太坊技术分享",
-        chat_time_str="8pm, Dec 9th",
+        meeting_type="tencent",
+        doc_link="",
+        chat_time_str="8pm, Dec 19th",
     )
