@@ -148,7 +148,7 @@ def generate_sharing_post(
     qr_img = qr.make_image(fill_color="black", back_color="white")
 
     # meeting link qrcode
-    qr_position = (int(220 + qr_img.width / 2), poster.height - qr_img.height - 308)
+    qr_position = (int(220 + qr_img.width / 2), poster.height - qr_img.height - 350)
 
     # 粘贴二维码到海报
     poster.paste(qr_img, qr_position)

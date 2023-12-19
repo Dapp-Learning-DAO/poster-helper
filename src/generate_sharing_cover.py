@@ -35,16 +35,16 @@ def generate_sharing_cover(
 
     draw = ImageDraw.Draw(poster)
 
-    padding = 120
+    padding = 150
     content_width = poster.width - padding * 2
 
     # title
-    title_font = ImageFont.truetype(TITLE_FONT, size=96)
+    title_font = ImageFont.truetype(TITLE_FONT, size=100)
     title_position_x = padding
     title_position_y = 380
     text_color = "#FFFFFF"
 
-    title_lines = auto_title_lines(title, title_font, content_width)
+    title_lines = auto_title_lines(title, title_font, content_width, line_height=40)
     # add title
     for _title, _left, _top in title_lines:
         draw.text(
@@ -115,7 +115,7 @@ def generate_sharing_cover(
             top_right_logo,
             (
                 poster.width - 350 - (padding + top_right_logo.width // 2),
-                padding + 100 - (top_right_logo.height // 2),
+                padding + 50 - (top_right_logo.height // 2),
             ),
             top_right_logo,  # alpha mask
         )
