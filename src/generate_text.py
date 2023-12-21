@@ -13,11 +13,15 @@ def generate_text(
     title_zh: str = "",
     chat_time_str: str = "",
 ):
-    title = title.replace("\n", " ")
+    if isinstance(title, str):
+        title = title.replace("\n", " ")
+    else:
+        title = " ".join([line["txt"] for line in title])
+
     if title_zh != "":
         title_zh = f"({title_zh})"
 
-    chat_announcement = f"""At {chat_time_str} (utc+8), we are excited to have @{presenter}  to bring us a sharing about '{title}{title_zh}'. Don't miss this meeting if you are interested in![Rose][Rose][Rose]
+    chat_announcement = f"""At {chat_time_str} (utc+8), we are excited to have {presenter}  to bring us a sharing about '{title}{title_zh}'. Don't miss this meeting if you are interested in![Rose][Rose][Rose]
 
 meeting link: {meeting_link}
 doc link: {doc_link}

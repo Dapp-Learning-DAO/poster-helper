@@ -39,18 +39,18 @@ def generate_sharing_cover(
     content_width = poster.width - padding * 2
 
     # title
-    title_font = ImageFont.truetype(TITLE_FONT, size=100)
+    title_size = 100
     title_position_x = padding
     title_position_y = 380
     text_color = "#FFFFFF"
 
-    title_lines = auto_title_lines(title, title_font, content_width, line_height=40)
+    title_lines = auto_title_lines(title, title_size, content_width, line_height=40)
     # add title
-    for _title, _left, _top in title_lines:
+    for _title, _left, _top, _font in title_lines:
         draw.text(
             (title_position_x + _left, title_position_y + _top),
             _title,
-            font=title_font,
+            font=_font,
             fill=text_color,
             align="center",
         )

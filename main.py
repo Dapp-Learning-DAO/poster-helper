@@ -75,22 +75,27 @@ def main(
 
 
 if __name__ == "__main__":
-    meeting_link = "https://meeting.tencent.com/dm/CZSIBEjKMZb0"
+    meeting_link = "https://meeting.tencent.com/dm/0f6vSxjqtxFa"
 
     main(
-        title="AA Workshop(I):\nAA Intro + Account",
-        title_zh="账户抽象 workshop(I)",
+        # title="AA Workshop(II):\nPaymaster + ERC-4337 Bundler",
+        title=[
+            {"txt": "AA Workshop(II):", "size_scale": 1},
+            {"txt": "Paymaster + ERC-4337 Bundler", "size_scale": 0.8},
+        ],
+        title_zh="账户抽象 workshop(II)",
         title_size=120,
-        presenter="imToken Labs",
+        presenter="Cyan & Jiahui",
         presenter_avatar="./input/Symble_Square.png",
         twitter="@imTokenOfficial",
         language="Chinese",
         project="imToken Labs",
         project_logo="./input/imtoken.png",
-        time_str="2023.12.19 20:00 (UTC+8)",
-        meeting_number="430-278-937",
+        time_str="2023.12.21 20:00 (UTC+8)",
+        meeting_number="482-423-635",
         meeting_link=meeting_link,
         meeting_type="tencent",
-        doc_link="",
-        chat_time_str="8pm, Dec 19th",
+        doc_link="""\n- https://docs.google.com/presentation/d/1RCZMrT_xncU7IClcLnHwmq6bABTS1OI0BIfez4g7rPQ/edit?usp=sharing
+- https://docs.google.com/presentation/d/1heRbrECmAlPivmnVCeZH9s7hxs3MqGK5rWsj080-1c4/edit?usp=sharing""",
+        chat_time_str="8pm, Dec 21th",
     )

@@ -1,4 +1,5 @@
 import os
+from typing import List
 import qrcode
 import cairosvg
 from PIL import Image, ImageDraw, ImageFont
@@ -18,7 +19,7 @@ RIGHT_TOP_LOGO_SIZE = (300, 350)
 
 
 def generate_sharing_post(
-    title: str,
+    title: str | List[dict],
     presenter: str,
     meeting_number: str,
     time_str: str,
@@ -38,18 +39,18 @@ def generate_sharing_post(
     content_width = poster.width - padding * 2
 
     # title
-    title_font = ImageFont.truetype(TITLE_FONT, size=title_size)
     title_position_x = padding
     title_position_y = 540
     text_color = "#A6FBF6"  # 或者使用RGB颜色，如(255, 255, 255)
 
-    title_lines = auto_title_lines(title, title_font, content_width)
+    title_lines = auto_title_lines(title, title_size, content_width)
+
     # add title
-    for _title, _left, _top in title_lines:
+    for _title, _left, _top, _font in title_lines:
         draw.text(
             (title_position_x + _left, title_position_y + _top),
             _title,
-            font=title_font,
+            font=_font,
             fill=text_color,
             align="center",
         )
