@@ -12,6 +12,7 @@ def main(
     language,
     project,
     project_logo,
+    project_log_max_size,
     time_str,
     meeting_number,
     meeting_link,
@@ -28,6 +29,7 @@ def main(
         language=language,
         project=project,
         project_logo=project_logo,
+        project_log_max_size=project_log_max_size,
         time_str=time_str,
         meeting_number=meeting_number,
         meeting_link=meeting_link,
@@ -75,27 +77,27 @@ def main(
 
 
 if __name__ == "__main__":
-    meeting_link = "https://meeting.tencent.com/dm/0f6vSxjqtxFa"
+    meeting_link = "https://meeting.tencent.com/dm/rUqYd6RtZPXi"
 
     main(
         # title="AA Workshop(II):\nPaymaster + ERC-4337 Bundler",
         title=[
-            {"txt": "AA Workshop(II):", "size_scale": 1},
-            {"txt": "Paymaster + ERC-4337 Bundler", "size_scale": 0.8},
+            {"txt": "An Overview of", "size_scale": 1},
+            {"txt": "Privacy-focused ZKVM Schemes", "size_scale": 0.8},
         ],
-        title_zh="账户抽象 workshop(II)",
+        title_zh="隐私ZKVM 方案总览",
         title_size=120,
-        presenter="Cyan & Jiahui",
-        presenter_avatar="./input/Symble_Square.png",
-        twitter="@imTokenOfficial",
+        presenter="Ola (Sin7y Labs)",
+        presenter_avatar="./input/ola-logo.png",
+        twitter="@ola_zkzkvm",
         language="Chinese",
-        project="imToken Labs",
-        project_logo="./input/imtoken.png",
-        time_str="2023.12.21 20:00 (UTC+8)",
-        meeting_number="482-423-635",
+        project="Ola (Sin7y Labs)",
+        project_logo="",
+        project_log_max_size=(500, 200),
+        time_str="2023.12.30 20:00 (UTC+8)",
+        meeting_number="878-795-051",
         meeting_link=meeting_link,
         meeting_type="tencent",
-        doc_link="""\n- https://docs.google.com/presentation/d/1RCZMrT_xncU7IClcLnHwmq6bABTS1OI0BIfez4g7rPQ/edit?usp=sharing
-- https://docs.google.com/presentation/d/1heRbrECmAlPivmnVCeZH9s7hxs3MqGK5rWsj080-1c4/edit?usp=sharing""",
-        chat_time_str="8pm, Dec 21th",
+        doc_link="""""",
+        chat_time_str="8pm, Dec 30th",
     )

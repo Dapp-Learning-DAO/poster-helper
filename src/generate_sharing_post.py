@@ -1,7 +1,6 @@
 import os
 from typing import List
 import qrcode
-import cairosvg
 from PIL import Image, ImageDraw, ImageFont
 
 from .utils import auto_title_lines, convert_svg_to_png
@@ -29,6 +28,7 @@ def generate_sharing_post(
     twitter: str = "",
     project: str = "",
     project_logo: str = "",
+    project_log_max_size = RIGHT_TOP_LOGO_SIZE,
     meeting_type: str = "tencent",  # "tencent" | "zoom"
 ):
     # 加载海报图片
@@ -115,7 +115,7 @@ def generate_sharing_post(
     # right-top logo
     if project_logo != "":
         top_right_logo = convert_svg_to_png(project_logo)
-        (max_w, max_h) = RIGHT_TOP_LOGO_SIZE
+        (max_w, max_h) = project_log_max_size
         if top_right_logo.width > max_w:
             top_right_logo = top_right_logo.resize(
                 (max_w, int(top_right_logo.height * max_w / top_right_logo.width))

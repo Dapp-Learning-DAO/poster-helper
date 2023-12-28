@@ -119,16 +119,11 @@ def generate_sharing_cover(
             ),
             top_right_logo,  # alpha mask
         )
-    else:
-        top_right_logo = Image.open(DEFAULT_LOGO_DIR).convert("RGBA")
-        poster.paste(
-            top_right_logo, (poster.width - 640, 140), top_right_logo
-        )  # alpha mask
 
     # Avatar
     if presenter_avatar != "":
         avatar_image = Image.open(presenter_avatar).convert("RGBA")
-        avatar_image = avatar_image.resize((168, 168))
+        avatar_image = avatar_image.resize((172, 172))
         # create avatar mask
         mask = Image.new("L", avatar_image.size, 0)
         draw = ImageDraw.Draw(mask)
@@ -138,7 +133,7 @@ def generate_sharing_cover(
         rounded_avatar = ImageOps.fit(avatar_image, mask.size, centering=(0.5, 0.5))
         rounded_avatar.putalpha(mask)
 
-        avatar_position = (593, 735)
+        avatar_position = (590, 735)
         poster.paste(rounded_avatar, avatar_position, rounded_avatar)
 
     poster.save("./output/sharing_cover.png")
