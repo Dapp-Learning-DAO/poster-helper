@@ -40,6 +40,7 @@ github: https://github.com/Dapp-Learning-DAO/Dapp-Learning
 gitcoin: https://gitcoin.co/grants/3414/dapp-learning-developer-group-1
 公众号: Dapp Learning
 discord: https://discord.gg/cRYNYXqPeR
+telegram: https://t.me/joinchat/48Mp2jy4Yw40MmI1
 twitter: https://twitter.com/Dapp_Learning
 bilibili: https://space.bilibili.com/2145417872
 youtube: https://www.youtube.com/c/DappLearning
@@ -68,6 +69,7 @@ github: https://github.com/Dapp-Learning-DAO/Dapp-Learning
 gitcoin: https://gitcoin.co/grants/3414/dapp-learning-developer-group-1
 公众号: Dapp Learning
 discord: https://discord.gg/cRYNYXqPeR
+telegram: https://t.me/joinchat/48Mp2jy4Yw40MmI1
 twitter: https://twitter.com/Dapp_Learning
 youtube: https://www.youtube.com/c/DappLearning
 bilibili: https://space.bilibili.com/2145417872
