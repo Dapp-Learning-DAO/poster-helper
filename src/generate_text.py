@@ -35,7 +35,8 @@ doc link: {doc_link}
 分享者推特: {twitter}
 资料链接: {doc_link}
 
-欢迎关注和加入我们: 
+欢迎关注和加入我们:
+website: https://dapplearning.org
 github: https://github.com/Dapp-Learning-DAO/Dapp-Learning
 gitcoin: https://gitcoin.co/grants/3414/dapp-learning-developer-group-1
 公众号: Dapp Learning

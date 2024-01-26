@@ -11,7 +11,7 @@ DEFAULT_LOGO_DIR = "./img/share_to_earn.png"
 TITLE_FONT = "./font/Kollektif.ttf"
 INFO_FONT = "./font/Montserrat-VariableFont_wght.ttf"
 
-RIGHT_TOP_LOGO_SIZE = (500, 200)
+RIGHT_TOP_LOGO_SIZE = (300, 200)
 
 
 def generate_sharing_cover(
