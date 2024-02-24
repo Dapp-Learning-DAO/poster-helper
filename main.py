@@ -77,27 +77,28 @@ def main(
 
 
 if __name__ == "__main__":
-    meeting_link = "https://meeting.tencent.com/dm/rUqYd6RtZPXi"
+    meeting_link = "https://meeting.tencent.com/dm/K6MhkNLAWtl2"
 
     main(
         # title="AA Workshop(II):\nPaymaster + ERC-4337 Bundler",
         title=[
-            {"txt": "An Overview of", "size_scale": 1},
-            {"txt": "Privacy-focused ZKVM Schemes", "size_scale": 0.8},
+            {"txt": 'Evolution of Ethereum Fee Mechanism', "size_scale": 0.8},
+            {"txt": '', "size_scale": 0.8},
+            {"txt": 'EIP1559 -> EIP4844', "size_scale": 1},
         ],
-        title_zh="隐私ZKVM 方案总览",
-        title_size=120,
-        presenter="Ola (Sin7y Labs)",
-        presenter_avatar="./input/ola-logo.png",
-        twitter="@ola_zkzkvm",
+        title_zh="以太坊费用机制的演变: [→ EIP1559 → EIP4844]",
+        title_size=100,
+        presenter="Jason",
+        presenter_avatar="./input/avatar.jpg",
+        twitter="@0xbbbb_eth",
         language="Chinese",
-        project="Ola (Sin7y Labs)",
+        project="ETHconomics Research Space",
         project_logo="",
-        project_log_max_size=(500, 200),
-        time_str="2023.12.30 20:00 (UTC+8)",
-        meeting_number="878-795-051",
+        project_log_max_size=(400, 200),
+        time_str="2024.02.25 21:00 (UTC+8)",
+        meeting_number="273-504-825",
         meeting_link=meeting_link,
         meeting_type="tencent",
-        doc_link="""""",
-        chat_time_str="8pm, Dec 30th",
+        doc_link="https://docs.google.com/presentation/d/1timyH4y3cqeJRgrIz0hCTLdmGK_CFRMEz_XpXIuPV5E/edit#slide=id.p",
+        chat_time_str="9:00pm, Feb 25th",
     )

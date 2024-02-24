@@ -21,10 +21,19 @@ def generate_text(
     if title_zh != "":
         title_zh = f"({title_zh})"
 
-    chat_announcement = f"""At {chat_time_str} (utc+8), we are excited to have {presenter}  to bring us a sharing about '{title}{title_zh}'. Don't miss this meeting if you are interested in![Rose][Rose][Rose]
+    chat_announcement = f"""
+At {chat_time_str} (utc+8), we are excited to have {presenter}  to bring us a sharing about '{title}{title_zh}'. Don't miss this meeting if you are interested in![Rose][Rose][Rose]
 
 meeting link: {meeting_link}
 doc link: {doc_link}
+
+🎉🎉🎉DappLearning 官网上线啦🎉🎉🎉
+小伙伴们快去注册吧，享受更多社区福利 !
+也欢迎大家报名分享！
+
+官网传送门👇
+https://dapplearning.org/
+
     """
 
     meeting_announcement = f"""DL Open Source University
@@ -34,6 +43,13 @@ doc link: {doc_link}
 主要内容: {title}{title_zh}
 分享者推特: {twitter}
 资料链接: {doc_link}
+
+🎉🎉🎉DappLearning 官网上线啦🎉🎉🎉
+小伙伴们快去注册吧，享受更多社区福利 !
+也欢迎大家报名分享！
+
+官网传送门👇
+https://dapplearning.org/
 
 欢迎关注和加入我们:
 website: https://dapplearning.org
@@ -61,8 +77,16 @@ We are designed for developers with basic skills to step into blockchain DAPP de
 资料链接: 
 {doc_link}
 
+🎉🎉🎉DappLearning 官网上线啦🎉🎉🎉
+小伙伴们快去注册吧，享受更多社区福利 !
+也欢迎大家报名分享！
+
+官网传送门👇
+https://dapplearning.org/
+
 欢迎来做分享, 我们秉持开源大学理念, 创造去中心化的分享体验, 可自行填写表格安排时间和分享内容: 
-https://www.notion.so/dapplearning/b37a0a4ab4e646e3af5758bc977c5bc8
+https://dapplearning.org/sharing
+
 
 欢迎关注和加入我们: 
 Welcome to follow and join us:
