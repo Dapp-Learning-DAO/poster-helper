@@ -12,6 +12,7 @@ def main(
     language,
     project,
     project_logo,
+    project_twitter,
     project_log_max_size,
     time_str,
     meeting_number,
@@ -57,6 +58,7 @@ def main(
         language=language,
         project=project,
         project_logo=project_logo,
+        project_twitter=project_twitter,
         time_str=time_str,
         meeting_number=meeting_number,
         meeting_link=meeting_link,
@@ -77,28 +79,29 @@ def main(
 
 
 if __name__ == "__main__":
-    meeting_link = "https://meeting.tencent.com/dm/K6MhkNLAWtl2"
+    meeting_link = "https://meeting.tencent.com/dm/SjZJHcpW4T9P"
 
     main(
         # title="AA Workshop(II):\nPaymaster + ERC-4337 Bundler",
         title=[
-            {"txt": 'Evolution of Ethereum Fee Mechanism', "size_scale": 0.8},
-            {"txt": '', "size_scale": 0.8},
-            {"txt": 'EIP1559 -> EIP4844', "size_scale": 1},
+            {"txt": 'Dive in Layer 2 Modules', "size_scale": 1.0},
+            {"txt": '', "size_scale": 1.4},
+            {"txt": 'by Morph', "size_scale": 1.2},
         ],
-        title_zh="以太坊费用机制的演变: [→ EIP1559 → EIP4844]",
-        title_size=100,
-        presenter="Jason",
+        title_zh="Morph Layer2 深入解析",
+        title_size=120,
+        presenter="Luka",
         presenter_avatar="./input/avatar.jpg",
-        twitter="@0xbbbb_eth",
+        twitter="@0xGantoL",
         language="Chinese",
-        project="ETHconomics Research Space",
-        project_logo="",
+        project="Morph",
+        project_logo="./input/logo.png",
+        project_twitter="@MorphL2",
         project_log_max_size=(400, 200),
-        time_str="2024.02.25 21:00 (UTC+8)",
-        meeting_number="273-504-825",
+        time_str="2024.03.19 20:00 (UTC+8)",
+        meeting_number="525-656-774",
         meeting_link=meeting_link,
         meeting_type="tencent",
-        doc_link="https://docs.google.com/presentation/d/1timyH4y3cqeJRgrIz0hCTLdmGK_CFRMEz_XpXIuPV5E/edit#slide=id.p",
-        chat_time_str="9:00pm, Feb 25th",
+        doc_link="https://docs.google.com/presentation/d/1Fag5JyOqV9e0QeEC1f1sWf8kutOek2fXHzYDld76dIQ",
+        chat_time_str="8:00pm, Mar 19th",
     )

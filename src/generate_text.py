@@ -8,6 +8,7 @@ def generate_text(
     twitter: str = "",
     project: str = "",
     project_logo: str = "",
+    project_twitter: str = "",
     meeting_type: str = "tencent",  # "tencent" | "zoom"
     doc_link: str = "",
     title_zh: str = "",
@@ -20,19 +21,48 @@ def generate_text(
 
     if title_zh != "":
         title_zh = f"({title_zh})"
+    
+    presenter_wecaht = presenter
+    if project:
+        presenter_wecaht += f" from {project}"
+
+    presenter_twitter = presenter
+    if twitter:
+        presenter_twitter = twitter
+    if project_twitter:
+        presenter_twitter += f" from {project_twitter}"
+    elif project:
+        presenter_twitter += f" from {project}"
+
 
     chat_announcement = f"""
-At {chat_time_str} (utc+8), we are excited to have {presenter}  to bring us a sharing about '{title}{title_zh}'. Don't miss this meeting if you are interested in![Rose][Rose][Rose]
+wechat:
+At {chat_time_str} (utc+8), we are excited to have {presenter_wecaht} to bring us a sharing about '{title}{title_zh}'. Don't miss this meeting if you are interested in![Rose][Rose][Rose]
 
 meeting link: {meeting_link}
 doc link: {doc_link}
 
-🎉🎉🎉DappLearning 官网上线啦🎉🎉🎉
-小伙伴们快去注册吧，享受更多社区福利 !
-也欢迎大家报名分享！
+Feel free to come to share and get 160 DAI reward. Complete the form at the following link: 
+https://dapplearning.org/sharing
 
-官网传送门👇
-https://dapplearning.org/
+🎉🎉🎉
+During the sharing period, you have the chance to receive ZK red packet rewards sent by the presenter!
+来听分享的小伙伴，可以获取分享人发的官网口令红包哦！
+
+
+
+twitter:
+At {chat_time_str} (utc+8), we are excited to have {presenter_twitter} to bring us a sharing about '{title}{title_zh}'. Don't miss this meeting if you are interested in![Rose][Rose][Rose]
+
+meeting link: {meeting_link}
+doc link: {doc_link}
+
+Feel free to come to share and get 160 DAI reward. Complete the form at the following link: 
+https://dapplearning.org/sharing
+
+🎉🎉🎉
+During the sharing period, you have the chance to receive ZK red packet rewards sent by the presenter!
+来听分享的小伙伴，可以获取分享人发的官网口令红包哦！
 
     """
 

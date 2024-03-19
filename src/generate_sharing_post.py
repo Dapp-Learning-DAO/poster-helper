@@ -127,7 +127,7 @@ def generate_sharing_post(
         poster.paste(
             top_right_logo,
             (
-                poster.width - 320 - (padding + top_right_logo.width // 2),
+                poster.width - 200 - (padding + top_right_logo.width // 2),
                 padding + 100 - (top_right_logo.height // 2),
             ),
             top_right_logo,  # alpha mask
@@ -141,7 +141,7 @@ def generate_sharing_post(
         version=1,
         error_correction=qrcode.constants.ERROR_CORRECT_L,
         box_size=5,
-        border=1,
+        border=2,
     )
     qr.add_data(meeting_link)
     qr.make(fit=True)
@@ -153,6 +153,24 @@ def generate_sharing_post(
 
     # 粘贴二维码到海报
     poster.paste(qr_img, qr_position)
+
+    # 生成二维码
+    sharing_qr = qrcode.QRCode(
+        version=1,
+        error_correction=qrcode.constants.ERROR_CORRECT_L,
+        box_size=5,
+        border=2,
+    )
+    sharing_qr.add_data("https://dapplearning.org/sharing/")
+    sharing_qr.make(fit=True)
+
+    sharing_qr_img = sharing_qr.make_image(fill_color="black", back_color="white")
+
+    # meeting link sharing_qrcode
+    sharing_qr_position = (int(712 + sharing_qr_img.width / 2), poster.height - sharing_qr_img.height - 340)
+
+    # 粘贴二维码到海报
+    poster.paste(sharing_qr_img, sharing_qr_position)
 
     # 保存或显示最终海报
     poster.save("./output/sharing_post.png")  # 保存海报
