@@ -120,6 +120,7 @@ https://dapplearning.org/sharing
 
 欢迎关注和加入我们: 
 Welcome to follow and join us:
+website: https://dapplearning.org
 github: https://github.com/Dapp-Learning-DAO/Dapp-Learning
 gitcoin: https://gitcoin.co/grants/3414/dapp-learning-developer-group-1
 公众号: Dapp Learning
@@ -128,7 +129,7 @@ telegram: https://t.me/joinchat/48Mp2jy4Yw40MmI1
 twitter: https://twitter.com/Dapp_Learning
 youtube: https://www.youtube.com/c/DappLearning
 bilibili: https://space.bilibili.com/2145417872
-bounty: https://github.com/Dapp-Learning-DAO/Dapp-Learning/discussions?discussions_q=label%3Abounty
+bounty: https://dapplearning.org/bounty
 
 本项目适合有一定语言基础的开发者入门区块链 DAPP 开发, 由浅到深了解和开发 DeFi, NFT, DAO, CRYPTO 项目。
 项目愿景是给初级开发者一个可执行且最简的区块链 Dapp 学习路线图, 给进阶开发者一个可以交流和协作的平台。
