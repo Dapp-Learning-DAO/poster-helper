@@ -8,8 +8,8 @@ COVER_BG_DIR = "./img/sharing_cover_bg.png"
 COVER_BG_DIR_2 = "./img/sharing_cover_bg_2.png"
 DEFAULT_LOGO_DIR = "./img/share_to_earn.png"
 
-TITLE_FONT = "./font/Kollektif.ttf"
-INFO_FONT = "./font/Montserrat-VariableFont_wght.ttf"
+TITLE_FONT = "./font/SourceHanSansCN-Bold.otf"
+INFO_FONT = "./font/SourceHanSansCN-Normal.otf"
 
 RIGHT_TOP_LOGO_SIZE = (300, 200)
 
@@ -77,12 +77,12 @@ def generate_sharing_cover(
         date_top += _h + 20
 
     # presenter info
-    presenter_font = ImageFont.truetype(TITLE_FONT, size=45)
+    presenter_font = ImageFont.truetype(INFO_FONT, size=45)
 
     (left, top, right, bottom) = presenter_font.getbbox(presenter)
     _w = right - left
     draw.text(
-        (padding + (content_width - _w) // 2 + 128, 758),
+        (padding + (content_width - _w) // 2 + 128, 748),
         presenter,
         font=presenter_font,
         fill="#ffffff",
@@ -92,7 +92,7 @@ def generate_sharing_cover(
     (left, top, right, bottom) = presenter_font.getbbox(presenter)
     _w = right - left
     draw.text(
-        (padding + 768, 852),
+        (padding + 768, 844),
         twitter,
         font=presenter_font,
         fill="#ffffff",

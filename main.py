@@ -79,29 +79,27 @@ def main(
 
 
 if __name__ == "__main__":
-    meeting_link = "https://meeting.tencent.com/dm/SjZJHcpW4T9P"
+    meeting_link = "https://meeting.tencent.com/dm/EhilLAleZgc8"
 
     main(
         # title="AA Workshop(II):\nPaymaster + ERC-4337 Bundler",
         title=[
-            {"txt": 'Dive in Layer 2 Modules', "size_scale": 1.0},
-            {"txt": '', "size_scale": 1.4},
-            {"txt": 'by Morph', "size_scale": 1.2},
+            {"txt": 'Pendle Finance', "size_scale": 1.4},
         ],
-        title_zh="Morph Layer2 深入解析",
+        title_zh="Pendle Finance协议解析",
         title_size=120,
-        presenter="Luka",
+        presenter="Sam",
         presenter_avatar="./input/avatar.jpg",
-        twitter="@0xGantoL",
+        twitter="@0xmetazen",
         language="Chinese",
-        project="Morph",
-        project_logo="./input/logo.png",
-        project_twitter="@MorphL2",
+        project="",
+        project_logo="",
+        project_twitter="",
         project_log_max_size=(400, 200),
-        time_str="2024.03.19 20:00 (UTC+8)",
-        meeting_number="525-656-774",
+        time_str="2024.04.07 20:00 (UTC+8)",
+        meeting_number="865-600-588",
         meeting_link=meeting_link,
         meeting_type="tencent",
-        doc_link="https://docs.google.com/presentation/d/1Fag5JyOqV9e0QeEC1f1sWf8kutOek2fXHzYDld76dIQ",
-        chat_time_str="8:00pm, Mar 19th",
+        doc_link="https://drive.google.com/file/d/1CafQmIZoEqrBcge_TF6d1kMJC8ATSo4Z/view?usp=sharing",
+        chat_time_str="8:00pm, Apr 7th",
     )

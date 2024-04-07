@@ -5,7 +5,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 TMP_CONVERT_PNG = "./tmp/tmp_convert.png"
-TITLE_FONT = "./font/Kollektif.ttf"
+TITLE_FONT = "./font/SourceHanSansCN-Bold.otf"
 
 
 def is_svg_file(file_path):

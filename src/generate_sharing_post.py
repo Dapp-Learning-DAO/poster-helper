@@ -9,8 +9,8 @@ from .utils import auto_title_lines, convert_svg_to_png
 BG_DIR = "./img/sharing_post_bg.png"
 DEFAULT_LOGO_DIR = "./img/share_to_earn.png"
 
-TITLE_FONT = "./font/Kollektif.ttf"
-INFO_FONT = "./font/Montserrat-VariableFont_wght.ttf"
+TITLE_FONT = "./font/SourceHanSansCN-Bold.otf"
+INFO_FONT = "./font/SourceHanSansCN-Normal.otf"
 
 BG_COLOR = "#101E3F"
 
@@ -96,7 +96,7 @@ def generate_sharing_post(
         f"{meeting_type.upper()} MEETING: {meeting_number}",
     ]
 
-    meeting_font = ImageFont.truetype(TITLE_FONT, size=56)
+    meeting_font = ImageFont.truetype(INFO_FONT, size=56)
     meeting_top = meeting_position_y
     for _info in meeting_lines:
         (left, top, right, bottom) = meeting_font.getbbox(_info)
