@@ -40,7 +40,7 @@ wechat:
 At {chat_time_str} (utc+8), we are excited to have {presenter_wecaht} to bring us a sharing about '{title}{title_zh}'. Don't miss this meeting if you are interested in![Rose][Rose][Rose]
 
 meeting link: {meeting_link}
-doc link: {doc_link}
+{"doc link: " + doc_link if doc_link else ""}
 
 Feel free to come to share and get 160 DAI reward. Complete the form at the following link: 
 https://dapplearning.org/sharing
@@ -55,7 +55,7 @@ twitter:
 At {chat_time_str} (utc+8), we are excited to have {presenter_twitter} to bring us a sharing about '{title}{title_zh}'. Don't miss this meeting if you are interested in![Rose][Rose][Rose]
 
 meeting link: {meeting_link}
-doc link: {doc_link}
+{"doc link: " + doc_link if doc_link else ""}
 
 Feel free to come to share and get 160 DAI reward. Complete the form at the following link: 
 https://dapplearning.org/sharing

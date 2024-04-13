@@ -40,7 +40,7 @@ def generate_sharing_post(
 
     # title
     title_position_x = padding
-    title_position_y = 540
+    title_position_y = 480
     text_color = "#A6FBF6"  # 或者使用RGB颜色，如(255, 255, 255)
 
     title_lines = auto_title_lines(title, title_size, content_width)

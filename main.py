@@ -6,12 +6,14 @@ from src.generate_text import generate_text
 def main(
     title,
     title_size,
+    title_size_cover,
     presenter,
     presenter_avatar,
     twitter,
     language,
     project,
     project_logo,
+    project_logo_horizontal,
     project_twitter,
     project_log_max_size,
     time_str,
@@ -39,12 +41,14 @@ def main(
 
     generate_sharing_cover(
         title=title,
+        title_size=title_size_cover if title_size_cover else title_size,
         presenter=presenter,
         presenter_avatar=presenter_avatar,
         twitter=twitter,
         language=language,
         project=project,
-        project_logo=project_logo,
+        project_logo=project_logo_horizontal if project_logo_horizontal else project_logo,
+        project_log_max_size=project_log_max_size,
         time_str=time_str,
         meeting_number=meeting_number,
         meeting_link=meeting_link,
@@ -79,27 +83,31 @@ def main(
 
 
 if __name__ == "__main__":
-    meeting_link = "https://meeting.tencent.com/dm/EhilLAleZgc8"
+    meeting_link = "https://meet.google.com/sqn-tved-zxb"
 
     main(
         # title="AA Workshop(II):\nPaymaster + ERC-4337 Bundler",
         title=[
-            {"txt": 'Pendle Finance', "size_scale": 1.4},
+            {"txt": 'Ethereum decentralization,', "size_scale": 1.0},
+            {"txt": 'Censorship resistance', "size_scale": 1.0},
+            {"txt": 'and Client diversity', "size_scale": 1.0},
         ],
-        title_zh="Pendle Finance协议解析",
-        title_size=120,
-        presenter="Sam",
+        title_zh="以太坊去中心化、抗审查性和客户端多样性",
+        title_size=90,
+        title_size_cover=75,
+        presenter="Ahmad Bitar",
         presenter_avatar="./input/avatar.jpg",
-        twitter="@0xmetazen",
-        language="Chinese",
-        project="",
-        project_logo="",
-        project_twitter="",
-        project_log_max_size=(400, 200),
-        time_str="2024.04.07 20:00 (UTC+8)",
-        meeting_number="865-600-588",
+        twitter="@Smartprogrammer",
+        language="English",
+        project="Nethermind",
+        project_logo="./input/Nethermind_Light_Vertical.png",
+        project_logo_horizontal="./input/logo.png",
+        project_twitter="@NethermindEth",
+        project_log_max_size=(400, 300),
+        time_str="2024.04.14 20:00 (UTC+8)",
+        meeting_number="sqn-tved-zxb",
         meeting_link=meeting_link,
-        meeting_type="tencent",
-        doc_link="https://drive.google.com/file/d/1CafQmIZoEqrBcge_TF6d1kMJC8ATSo4Z/view?usp=sharing",
-        chat_time_str="8:00pm, Apr 7th",
+        meeting_type="google",
+        doc_link="",
+        chat_time_str="8:00pm, Apr 14th",
     )
