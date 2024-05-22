@@ -83,31 +83,30 @@ def main(
 
 
 if __name__ == "__main__":
-    meeting_link = "https://meet.google.com/sqn-tved-zxb"
+    meeting_link = "https://meeting.tencent.com/dm/abd4agPYZ4dH"
 
     main(
         # title="AA Workshop(II):\nPaymaster + ERC-4337 Bundler",
         title=[
-            {"txt": 'Ethereum decentralization,', "size_scale": 1.0},
-            {"txt": 'Censorship resistance', "size_scale": 1.0},
-            {"txt": 'and Client diversity', "size_scale": 1.0},
+            {"txt": 'zkSync Era Tutorial 02:', "size_scale": 1.0},
+            {"txt": 'Native Account Abstraction', "size_scale": 1.0},
         ],
-        title_zh="以太坊去中心化、抗审查性和客户端多样性",
-        title_size=90,
-        title_size_cover=75,
-        presenter="Ahmad Bitar",
+        title_zh="zkSync Era Tutorial 02: 原生抽象账户",
+        title_size=100,
+        title_size_cover=80,
+        presenter="0xstan",
         presenter_avatar="./input/avatar.jpg",
-        twitter="@Smartprogrammer",
-        language="English",
-        project="Nethermind",
-        project_logo="./input/Nethermind_Light_Vertical.png",
+        twitter="@0xstan_",
+        language="Chinese",
+        project="",
+        project_logo="./input/logo.png",
         project_logo_horizontal="./input/logo.png",
-        project_twitter="@NethermindEth",
-        project_log_max_size=(400, 300),
-        time_str="2024.04.14 20:00 (UTC+8)",
-        meeting_number="sqn-tved-zxb",
+        project_twitter="",
+        project_log_max_size=(460, 460),
+        time_str="2024.05.23 20:00 (UTC+8)",
+        meeting_number="406-634-918",
         meeting_link=meeting_link,
-        meeting_type="google",
-        doc_link="",
-        chat_time_str="8:00pm, Apr 14th",
+        meeting_type="tencent",
+        doc_link="https://github.com/Dapp-Learning-DAO/Dapp-Learning-zkSync",
+        chat_time_str="8:00pm, May 23th",
     )

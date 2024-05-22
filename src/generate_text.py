@@ -46,8 +46,8 @@ Feel free to come to share and get 160 DAI reward. Complete the form at the foll
 https://dapplearning.org/sharing
 
 🎉🎉🎉
-During the sharing period, you have the chance to receive ZK red packet rewards sent by the presenter!
-来听分享的小伙伴，可以获取分享人发的官网口令红包哦！
+During the sharing period, you have the chance to receive ZK red packet rewards!
+来听分享的小伙伴，可以获取官网口令红包哦！
 
 
 
@@ -61,8 +61,8 @@ Feel free to come to share and get 160 DAI reward. Complete the form at the foll
 https://dapplearning.org/sharing
 
 🎉🎉🎉
-During the sharing period, you have the chance to receive ZK red packet rewards sent by the presenter!
-来听分享的小伙伴，可以获取分享人发的官网口令红包哦！
+During the sharing period, you have the chance to receive ZK red packet rewards!
+来听分享的小伙伴，可以获取官网口令红包哦！
 
     """
 

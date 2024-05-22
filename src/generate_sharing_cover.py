@@ -117,7 +117,7 @@ def generate_sharing_cover(
             top_right_logo,
             (
                 poster.width - 320 - (padding + top_right_logo.width // 2),
-                padding + 80 - (top_right_logo.height // 2),
+                padding + 20 - (top_right_logo.height // 2),
             ),
             top_right_logo,  # alpha mask
         )

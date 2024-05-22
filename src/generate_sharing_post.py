@@ -40,7 +40,7 @@ def generate_sharing_post(
 
     # title
     title_position_x = padding
-    title_position_y = 480
+    title_position_y = 520
     text_color = "#A6FBF6"  # 或者使用RGB颜色，如(255, 255, 255)
 
     title_lines = auto_title_lines(title, title_size, content_width)
@@ -127,8 +127,8 @@ def generate_sharing_post(
         poster.paste(
             top_right_logo,
             (
-                poster.width - 200 - (padding + top_right_logo.width // 2),
-                padding + 100 - (top_right_logo.height // 2),
+                poster.width - 250 - (padding + top_right_logo.width // 2),
+                padding + 120 - (top_right_logo.height // 2),
             ),
             top_right_logo,  # alpha mask
         )
@@ -149,28 +149,10 @@ def generate_sharing_post(
     qr_img = qr.make_image(fill_color="black", back_color="white")
 
     # meeting link qrcode
-    qr_position = (int(220 + qr_img.width / 2), poster.height - qr_img.height - 350)
+    qr_position = (int(220 + qr_img.width / 2), poster.height - qr_img.height - 360)
 
     # 粘贴二维码到海报
     poster.paste(qr_img, qr_position)
-
-    # 生成二维码
-    sharing_qr = qrcode.QRCode(
-        version=1,
-        error_correction=qrcode.constants.ERROR_CORRECT_L,
-        box_size=5,
-        border=2,
-    )
-    sharing_qr.add_data("https://dapplearning.org/sharing/")
-    sharing_qr.make(fit=True)
-
-    sharing_qr_img = sharing_qr.make_image(fill_color="black", back_color="white")
-
-    # meeting link sharing_qrcode
-    sharing_qr_position = (int(712 + sharing_qr_img.width / 2), poster.height - sharing_qr_img.height - 340)
-
-    # 粘贴二维码到海报
-    poster.paste(sharing_qr_img, sharing_qr_position)
 
     # 保存或显示最终海报
     poster.save("./output/sharing_post.png")  # 保存海报
