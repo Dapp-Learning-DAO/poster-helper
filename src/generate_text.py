@@ -144,7 +144,7 @@ Youtube:
 Bilibili: 
     """
 
-    with open("./output/announcement.txt", "w") as file:
+    with open("./output/announcement.txt", "w", encoding="utf-8") as file:
         file.write(f"\n{chat_announcement}\n\n\n\n\n{meeting_announcement}\n\n\n\n\n{video_intro}\n\n\n\n\n{video_link}\n\n\n\n\n")
 
 
