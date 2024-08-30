@@ -52,7 +52,7 @@ During the sharing period, you have the chance to receive ZK red packet rewards!
 
 
 twitter:
-At {chat_time_str} (utc+8), we are excited to have {presenter_twitter} to bring us a sharing about '{title}{title_zh}'. Don't miss this meeting if you are interested in![Rose][Rose][Rose]
+At {chat_time_str} (utc+8), we are excited to have {presenter_twitter} to bring us a sharing about '{title}{title_zh}'. Don't miss this meeting if you are interested in!🌹🌹🌹
 
 meeting link: {meeting_link}
 {"doc link: " + doc_link if doc_link else ""}

@@ -67,7 +67,7 @@ def generate_sharing_post(
     else:
         info_lines.append("Language: Chinese")
     if project != "":
-        info_lines.append(f"Project: {project}")
+        info_lines.append(f"Project/Org: {project}")
 
     info_lines.reverse()
 
