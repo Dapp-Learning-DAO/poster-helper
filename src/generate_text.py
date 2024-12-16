@@ -20,7 +20,7 @@ def generate_text(
         title = " ".join([line["txt"] for line in title])
 
     if title_zh != "":
-        title_zh = f"({title_zh})"
+        title_zh = f"{title_zh}"
     
     presenter_wecaht = presenter
     if project:
@@ -37,7 +37,25 @@ def generate_text(
 
     chat_announcement = f"""
 wechat:
-At {chat_time_str} (utc+8), we are excited to have {presenter_wecaht} to bring us a sharing about '{title}{title_zh}'. Don't miss this meeting if you are interested in![Rose][Rose][Rose]
+
+🎉🎉🎉
+DappLearning 分享会预告：
+分享者：{presenter}
+{'项目/社区：' + project if project else ''}
+
+标题：{title_zh}
+
+
+会议时间：{chat_time_str} 
+会议链接：{meeting_link}
+腾讯会议：{meeting_number}
+分享材料：{doc_link if doc_link else ""}
+
+欢迎大家来做分享, 优秀分享者将会获得 160 DAI 奖励哦！  
+https://dapplearning.org/sharing
+🎉🎉🎉
+
+At {chat_time_str} (utc+8), we are excited to have {presenter_wecaht} to bring us a sharing about '{title}{"("+title_zh+")" if title_zh else ""}'. Don't miss this meeting if you are interested in![Rose][Rose][Rose]
 
 meeting link: {meeting_link}
 {"doc link: " + doc_link if doc_link else ""}
@@ -52,7 +70,7 @@ During the sharing period, you have the chance to receive ZK red packet rewards!
 
 
 twitter:
-At {chat_time_str} (utc+8), we are excited to have {presenter_twitter} to bring us a sharing about '{title}{title_zh}'. Don't miss this meeting if you are interested in!🌹🌹🌹
+At {chat_time_str} (utc+8), we are excited to have {presenter_twitter} to bring us a sharing about '{title}{"("+title_zh+")" if title_zh else ""}'. Don't miss this meeting if you are interested in!🌹🌹🌹
 
 meeting link: {meeting_link}
 {"doc link: " + doc_link if doc_link else ""}
@@ -64,7 +82,7 @@ https://dapplearning.org/sharing
 During the sharing period, you have the chance to receive ZK red packet rewards!
 来听分享的小伙伴，可以获取官网口令红包哦！
 
-    """
+"""
 
     meeting_announcement = f"""DL Open Source University
 添加微信号 DappLearning, 加入交流群
@@ -84,7 +102,6 @@ https://dapplearning.org/
 欢迎关注和加入我们:
 website: https://dapplearning.org
 github: https://github.com/Dapp-Learning-DAO/Dapp-Learning
-gitcoin: https://gitcoin.co/grants/3414/dapp-learning-developer-group-1
 公众号: Dapp Learning
 discord: https://discord.gg/cRYNYXqPeR
 telegram: https://t.me/joinchat/48Mp2jy4Yw40MmI1
@@ -98,7 +115,7 @@ youtube: https://www.youtube.com/c/DappLearning
 We are designed for developers with basic skills to step into blockchain DAPP development, where they can get close to DeFi, NFT, DAO, CRYPTO projects. We hope we could not only give junior developers an executable and simplest blockchain DAPP learning roadmap, but also present advanced developers with a platform for communication and cooperation.
     """
 
-    video_intro = f"""添加微信号 DappLearning, 加入交流群
+    video_intro = f"""添加WX号 DappLearning, 加入交流群
 
 分享者: {presenter}
 时间: {time_str}
@@ -122,7 +139,6 @@ https://dapplearning.org/sharing
 Welcome to follow and join us:
 website: https://dapplearning.org
 github: https://github.com/Dapp-Learning-DAO/Dapp-Learning
-gitcoin: https://gitcoin.co/grants/3414/dapp-learning-developer-group-1
 公众号: Dapp Learning
 discord: https://discord.gg/cRYNYXqPeR
 telegram: https://t.me/joinchat/48Mp2jy4Yw40MmI1

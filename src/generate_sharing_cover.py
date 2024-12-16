@@ -42,7 +42,7 @@ def generate_sharing_cover(
 
     # title
     title_position_x = padding
-    title_position_y = 380
+    title_position_y = 320
     text_color = "#FFFFFF"
 
     title_lines = auto_title_lines(title, title_size, content_width, line_height=40)
