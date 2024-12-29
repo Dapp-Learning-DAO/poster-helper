@@ -22,6 +22,7 @@ def main(
     meeting_type,
     doc_link,
     title_zh,
+    main_content,
     chat_time_str,
 ):
     generate_sharing_post(
@@ -69,6 +70,7 @@ def main(
         meeting_type=meeting_type,
         doc_link=doc_link,
         title_zh=title_zh,
+        main_content=main_content,
         chat_time_str=chat_time_str,
     )
     
@@ -83,31 +85,35 @@ def main(
 
 
 if __name__ == "__main__":
-    meeting_link = "https://meeting.tencent.com/dm/lozHZ6sgZC96"
+    meeting_link = "https://meeting.tencent.com/dm/scBibuvXjEIx"
 
     main(
         # title="AA Workshop(II):\nPaymaster + ERC-4337 Bundler",
         title=[
-            {"txt": 'Devcon7 Insights:', "size_scale": 1.0},
-            {"txt": 'the Latest Advancements in', "size_scale": 1.0},
-            {"txt": 'Ethereum Technology', "size_scale": 1.0},
+            {"txt": '', "size_scale": 1.0},
+            {"txt": 'Web2⇔Web3 through Email', "size_scale": 1.1},
         ],
-        title_zh="Devcon7见闻--以太坊最新技术进展分享",
+        title_zh="通过 Email 实现 Web2 和 Web3 互通",
+        main_content="""
+1. 在区块链上适配 DKIM
+2. 使用 ZK（零知识）技术保护身份和消息隐私
+3. 相关风险
+""",
         title_size=90,
         title_size_cover=80,
-        presenter="Yan",
-        presenter_avatar="./input/avatar.png",
-        twitter="yanyanho",
+        presenter="Jason",
+        presenter_avatar="./input/avatar.jpg",
+        twitter="0xbbbb_eth",
         language="Chinese",
-        project="DappLearning",
+        project="0xpantarhei",
         project_logo="",
-        project_logo_horizontal="",
-        project_twitter="",
-        project_log_max_size=(460, 460),
-        time_str="2024.12.15 20:00 (UTC+8)",
-        meeting_number="607-771-690",
+        project_logo_horizontal="./input/logo.jpg",
+        project_twitter="0xpantarhei",
+        project_log_max_size=(660, 660),
+        time_str="2024.12.30 20:00 (UTC+8)",
+        meeting_number="528-768-393",
         meeting_link=meeting_link,
         meeting_type="tencent",
-        doc_link="https://dldao.notion.site/6-Devcon-159c40c2577f80f38862cc76563feb35",
-        chat_time_str="8:00pm, Dec 15th",
+        doc_link="https://docs.google.com/presentation/d/15KLwPefsIrmC2OUeE_WDhqPCEcC7FOSFzUoRtYjT4fw/edit?usp=sharing",
+        chat_time_str="8:00pm, Dec 30th",
     )

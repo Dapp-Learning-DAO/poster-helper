@@ -12,6 +12,7 @@ def generate_text(
     meeting_type: str = "tencent",  # "tencent" | "zoom"
     doc_link: str = "",
     title_zh: str = "",
+    main_content: str = "",
     chat_time_str: str = "",
 ):
     if isinstance(title, str):
@@ -43,9 +44,8 @@ DappLearning 分享会预告：
 分享者：{presenter}
 {'项目/社区：' + project if project else ''}
 
-标题：{title_zh}
-
-
+标题：{title_zh}({title})
+主要内容：{main_content}
 会议时间：{chat_time_str} 
 会议链接：{meeting_link}
 腾讯会议：{meeting_number}
