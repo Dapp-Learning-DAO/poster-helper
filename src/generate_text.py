@@ -85,10 +85,12 @@ During the sharing period, you have the chance to receive ZK red packet rewards!
 """
 
     meeting_announcement = f"""DL Open Source University
-添加微信号 DappLearning, 加入交流群
+添加WX号 DappLearning, 加入交流群
 
-分享者: {presenter}
-主要内容: {title}{title_zh}
+标题：{title_zh}({title})
+分享者：{presenter}
+{'项目/社区：' + project if project else ''}
+主要内容：{main_content}
 分享者推特: {twitter}
 资料链接: {doc_link}
 
@@ -117,12 +119,12 @@ We are designed for developers with basic skills to step into blockchain DAPP de
 
     video_intro = f"""添加WX号 DappLearning, 加入交流群
 
-分享者: {presenter}
-时间: {time_str}
-主要内容: {title}{title_zh}
+标题：{title_zh}({title})
+分享者：{presenter}
+{'项目/社区：' + project if project else ''}
+主要内容：{main_content}
 分享者推特: {twitter}
-资料链接: 
-{doc_link}
+资料链接: {doc_link}
 
 🎉🎉🎉DappLearning 官网上线啦🎉🎉🎉
 小伙伴们快去注册吧，享受更多社区福利 !
