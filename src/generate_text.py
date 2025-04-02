@@ -1,3 +1,6 @@
+from typing import Literal
+
+
 def generate_text(
     title: str,
     presenter: str,
@@ -9,7 +12,7 @@ def generate_text(
     project: str = "",
     project_logo: str = "",
     project_twitter: str = "",
-    meeting_type: str = "tencent",  # "tencent" | "zoom"
+    meeting_type: Literal["tencent", "zoom", "google"] = "tencent",  # "tencent" | "zoom" | "google"
     doc_link: str = "",
     title_zh: str = "",
     main_content: str = "",
@@ -22,6 +25,12 @@ def generate_text(
 
     if title_zh != "":
         title_zh = f"{title_zh}"
+
+    meeting_name = "腾讯会议"
+    if meeting_type == "zoom":
+        meeting_name = "ZOOM会议"
+    elif meeting_type == "google":
+        meeting_name = "谷歌会议"
     
     presenter_wecaht = presenter
     if project:
@@ -48,10 +57,10 @@ DappLearning 分享会预告：
 主要内容：{main_content}
 会议时间：{chat_time_str} 
 会议链接：{meeting_link}
-腾讯会议：{meeting_number}
+{meeting_name}：{meeting_number}
 分享材料：{doc_link if doc_link else ""}
 
-欢迎大家来做分享, 优秀分享者将会获得 160 DAI 奖励哦！  
+欢迎大家来做分享, 优秀分享者将会获得 200 DAI 奖励哦！  
 https://dapplearning.org/sharing
 🎉🎉🎉
 
@@ -60,9 +69,12 @@ At {chat_time_str} (utc+8), we are excited to have {presenter_wecaht} to bring u
 meeting link: {meeting_link}
 {"doc link: " + doc_link if doc_link else ""}
 
-Feel free to come to share and get 160 DAI reward. Complete the form at the following link: 
+Feel free to come to share and get 200 DAI reward. Complete the form at the following link: 
 https://dapplearning.org/sharing
 
+
+
+\n\n
 🎉🎉🎉
 During the sharing period, you have the chance to receive ZK red packet rewards!
 来听分享的小伙伴，可以获取官网口令红包哦！
@@ -75,9 +87,11 @@ At {chat_time_str} (utc+8), we are excited to have {presenter_twitter} to bring 
 meeting link: {meeting_link}
 {"doc link: " + doc_link if doc_link else ""}
 
-Feel free to come to share and get 160 DAI reward. Complete the form at the following link: 
+Feel free to come to share and get 200 DAI reward. Complete the form at the following link: 
 https://dapplearning.org/sharing
 
+
+\n\n
 🎉🎉🎉
 During the sharing period, you have the chance to receive ZK red packet rewards!
 来听分享的小伙伴，可以获取官网口令红包哦！
@@ -155,7 +169,7 @@ bounty: https://dapplearning.org/bounty
 We are designed for developers with basic skills to step into blockchain DAPP development, where they can get close to DeFi, NFT, DAO, CRYPTO projects. We hope we could not only give junior developers an executable and simplest blockchain DAPP learning roadmap, but also present advanced developers with a platform for communication and cooperation.
     """
 
-    video_link = f"""《{title}》by {presenter}
+    video_link = f"""《{title_zh}》by {presenter}
 精彩分享已上传, 欢迎点赞收藏订阅转发～～
 
 Youtube: 

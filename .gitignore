@@ -38,3 +38,6 @@ output/
 tmp/
 input/
 
+# venv
+venv/
+

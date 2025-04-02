@@ -1,5 +1,5 @@
 import os
-from typing import List
+from typing import List, Literal
 import qrcode
 from PIL import Image, ImageDraw, ImageFont
 
@@ -29,7 +29,7 @@ def generate_sharing_post(
     project: str = "",
     project_logo: str = "",
     project_log_max_size = RIGHT_TOP_LOGO_SIZE,
-    meeting_type: str = "tencent",  # "tencent" | "zoom"
+    meeting_type: Literal["tencent", "zoom", "google"] = "tencent",  # "tencent" | "zoom"
 ):
     # 加载海报图片
     poster = Image.open(BG_DIR).convert("RGBA")
@@ -146,13 +146,18 @@ def generate_sharing_post(
     qr.add_data(meeting_link)
     qr.make(fit=True)
 
+    # 将 QR 码图片转换为 RGBA 模式
     qr_img = qr.make_image(fill_color="black", back_color="white")
+    qr_img = qr_img.convert('RGBA')
 
     # meeting link qrcode
     qr_position = (int(220 + qr_img.width / 2), poster.height - qr_img.height - 360)
 
     # 粘贴二维码到海报
-    poster.paste(qr_img, qr_position)
+    qr_box = (qr_position[0], qr_position[1], 
+              qr_position[0] + qr_img.size[0], 
+              qr_position[1] + qr_img.size[1])
+    poster.paste(qr_img, qr_box)
 
     # 保存或显示最终海报
     poster.save("./output/sharing_post.png")  # 保存海报
