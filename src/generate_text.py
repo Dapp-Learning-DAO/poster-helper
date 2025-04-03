@@ -55,7 +55,8 @@ DappLearning 分享会预告：
 
 标题：{title_zh}({title})
 主要内容：{main_content}
-会议时间：{chat_time_str} 
+会议时间：{chat_time_str}
+会议语言：{"英文" if language.lower() == "english" else "中文"} 
 会议链接：{meeting_link}
 {meeting_name}：{meeting_number}
 分享材料：{doc_link if doc_link else ""}
