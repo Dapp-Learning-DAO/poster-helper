@@ -100,7 +100,7 @@ During the sharing period, you have the chance to receive ZK red packet rewards!
 """
 
     meeting_announcement = f"""DL Open Source University
-添加WX号 DappLearning, 加入交流群
++V: DappLearning, 加入交流群
 
 标题：{title_zh}({title})
 分享者：{presenter}
@@ -132,7 +132,7 @@ youtube: https://www.youtube.com/c/DappLearning
 We are designed for developers with basic skills to step into blockchain DAPP development, where they can get close to DeFi, NFT, DAO, CRYPTO projects. We hope we could not only give junior developers an executable and simplest blockchain DAPP learning roadmap, but also present advanced developers with a platform for communication and cooperation.
     """
 
-    video_intro = f"""添加WX号 DappLearning, 加入交流群
+    video_intro = f"""+V: DappLearning, 加入交流群
 
 标题：{title_zh}({title})
 分享者：{presenter}

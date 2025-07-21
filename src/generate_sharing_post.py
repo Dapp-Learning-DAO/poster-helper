@@ -114,16 +114,7 @@ def generate_sharing_post(
 
     # right-top logo
     if project_logo != "":
-        top_right_logo = convert_svg_to_png(project_logo)
-        (max_w, max_h) = project_log_max_size
-        if top_right_logo.width > max_w:
-            top_right_logo = top_right_logo.resize(
-                (max_w, int(top_right_logo.height * max_w / top_right_logo.width))
-            )
-        elif top_right_logo.height > max_h:
-            top_right_logo = top_right_logo.resize(
-                (int(top_right_logo.width * max_h / top_right_logo.height), max_h)
-            )
+        top_right_logo = convert_svg_to_png(project_logo, target_size=project_log_max_size)
         poster.paste(
             top_right_logo,
             (

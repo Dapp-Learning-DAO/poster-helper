@@ -85,35 +85,35 @@ def main(
 
 
 if __name__ == "__main__":
-    meeting_link = "https://meeting.tencent.com/dm/scBibuvXjEIx"
 
     main(
-        # title="AA Workshop(II):\nPaymaster + ERC-4337 Bundler",
         title=[
-            {"txt": '', "size_scale": 1.0},
-            {"txt": 'Web2⇔Web3 through Email', "size_scale": 1.1},
+            {"txt": '', "size_scale": 0.8},
+            {"txt": 'Dex Strategies on HummingBot', "size_scale": 1.0},
+            {"txt": '', "size_scale": 0.8},
         ],
-        title_zh="通过 Email 实现 Web2 和 Web3 互通",
+        title_zh="HummingBot 上的 Dex 策略分享",
         main_content="""
-1. 在区块链上适配 DKIM
-2. 使用 ZK（零知识）技术保护身份和消息隐私
-3. 相关风险
+- HummingBot 的历史
+- HummingBot 是什么
+- HummingBot 上的Dex策略
+- HummingBot 实操演示
 """,
-        title_size=90,
+        title_size=80,
         title_size_cover=80,
-        presenter="Jason",
-        presenter_avatar="./input/avatar.jpg",
-        twitter="0xbbbb_eth",
+        presenter="Dolm",
+        presenter_avatar="./input/avatar.png",
+        twitter="@dolm5415",
         language="Chinese",
-        project="Panta Rhei",
-        project_logo="./input/logo.png",
-        project_logo_horizontal="./input/logo.png",
-        project_twitter="0xpantarhei",
-        project_log_max_size=(480, 480),
-        time_str="2024.12.30 20:00 (UTC+8)",
-        meeting_number="528-768-393",
-        meeting_link=meeting_link,
+        project="Hummmingbot Foundation",
+        project_logo="./input/hummingbot-logo.svg",
+        project_logo_horizontal="",
+        project_twitter="",
+        project_log_max_size=(180, 180),
+        time_str="2025.07.21 20:00 (UTC+8)",
+        meeting_number="448-927-766",
+        meeting_link="https://meeting.tencent.com/dm/R859UQFXVg7v",
         meeting_type="tencent",
-        doc_link="https://docs.google.com/presentation/d/15KLwPefsIrmC2OUeE_WDhqPCEcC7FOSFzUoRtYjT4fw/edit?usp=sharing",
-        chat_time_str="8:00pm, Dec 30th",
+        doc_link="https://www.canva.com/design/DAGr4zip7BM/zkRxikA33cN9wMdcRLpJHQ/view",
+        chat_time_str="8:00pm, July 21st",
     )
