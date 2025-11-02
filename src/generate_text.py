@@ -21,7 +21,7 @@ def generate_text(
     if isinstance(title, str):
         title = title.replace("\n", " ")
     else:
-        title = " ".join([line["txt"] for line in title])
+        title = " ".join([line["txt"].replace("\n", "") for line in title])
 
     if title_zh != "":
         title_zh = f"{title_zh}"

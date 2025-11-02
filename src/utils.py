@@ -31,6 +31,10 @@ def convert_svg_to_png(file_path, target_size=None):
             # 尝试从SVG中获取width和height
             width = root.get('width')
             height = root.get('height')
+            viewBox = root.get('viewBox')
+            
+            original_width = None
+            original_height = None
             
             if width and height:
                 # 移除可能的单位（如px, pt等）
@@ -41,31 +45,35 @@ def convert_svg_to_png(file_path, target_size=None):
                 if width_match and height_match:
                     original_width = float(width_match.group())
                     original_height = float(height_match.group())
-                    
-                    target_width, target_height = target_size
-                    
-                    # 计算缩放比例，保持长宽比
-                    scale_x = target_width / original_width
-                    scale_y = target_height / original_height
-                    scale = min(scale_x, scale_y)  # 使用较小的缩放比例保持长宽比
-                    
-                    output_width = int(original_width * scale)
-                    output_height = int(original_height * scale)
-                    
-                    cairosvg.svg2png(
-                        url=file_path,
-                        write_to=TMP_CONVERT_PNG,
-                        output_width=output_width,
-                        output_height=output_height,
-                    )
-                else:
-                    # 无法解析尺寸，使用默认转换
-                    cairosvg.svg2png(
-                        url=file_path,
-                        write_to=TMP_CONVERT_PNG,
-                    )
+            elif viewBox:
+                # 如果没有width和height，尝试从viewBox中提取尺寸
+                # viewBox格式通常是 "x y width height"
+                import re
+                viewBox_values = re.findall(r'[\d.]+', viewBox)
+                if len(viewBox_values) >= 4:
+                    # viewBox = "x y width height"，我们需要width和height
+                    original_width = float(viewBox_values[2])
+                    original_height = float(viewBox_values[3])
+            
+            if original_width and original_height:
+                target_width, target_height = target_size
+                
+                # 计算缩放比例，保持长宽比
+                scale_x = target_width / original_width
+                scale_y = target_height / original_height
+                scale = min(scale_x, scale_y)  # 使用较小的缩放比例保持长宽比
+                
+                output_width = int(original_width * scale)
+                output_height = int(original_height * scale)
+                
+                cairosvg.svg2png(
+                    url=file_path,
+                    write_to=TMP_CONVERT_PNG,
+                    output_width=output_width,
+                    output_height=output_height,
+                )
             else:
-                # 无法获取尺寸，使用默认转换
+                # 无法解析尺寸，使用默认转换
                 cairosvg.svg2png(
                     url=file_path,
                     write_to=TMP_CONVERT_PNG,
